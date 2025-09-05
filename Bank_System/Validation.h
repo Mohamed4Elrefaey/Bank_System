@@ -35,12 +35,10 @@ public:
 	}
 
 	static bool validate_Balance(double balance) {
-
 		return balance >= 1500;
 	}
 
 	static bool validate_Salary(double salary) {
-
 		return salary >= 5000;
 	}
 
