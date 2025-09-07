@@ -1,5 +1,6 @@
 #pragma once
 #include "Person.h"
+
 class Client :
     public Person
 {
@@ -7,6 +8,9 @@ class Client :
     double balance;
 
 public:
+    Client():Person() {
+
+    };
     Client(string name, string password, int id, double balance):Person(name,password,id) {
         if (Validation::validate_Balance(balance) == true)
         {

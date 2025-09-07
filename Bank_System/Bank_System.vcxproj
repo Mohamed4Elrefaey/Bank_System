@@ -134,6 +134,8 @@
     <ClInclude Include="Client.h" />
     <ClInclude Include="DataSourceInterface.h" />
     <ClInclude Include="Employee.h" />
+    <ClInclude Include="FileManager.h" />
+    <ClInclude Include="FilesHelper.h" />
     <ClInclude Include="Parser.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="Validation.h" />

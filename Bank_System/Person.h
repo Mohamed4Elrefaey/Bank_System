@@ -12,7 +12,9 @@ class Person
 	string password;
 
 public:
+	Person() {};
 	Person(string name, string password, int id ):id(id) {
+		set_id(id);
 		if (Validation::validate_Name(name))
 		{
 			this->name = name;
@@ -29,6 +31,7 @@ public:
 		else {
 			cout << "Wrong Password , it must be at least 8 characters \n" ;
 		}
+
 	}
 	void set_Name(string name) {
 		if (Validation::validate_Name(name))
@@ -47,6 +50,9 @@ public:
 		else {
 			cout << "Wrong Password , it must be at least 8 characters \n";
 		}
+	}
+	void set_id(int id) {
+		this->id = id;
 	}
 	int get_ID() {
 		return id;

@@ -6,7 +6,8 @@ class Employee :
     double Salary;
 
 public:
-
+    Employee() :Person() {
+    };
     Employee(string name, string password, int id, double salary) :Person(name, password, id) {
         if (Validation::validate_Salary(salary))
         {
