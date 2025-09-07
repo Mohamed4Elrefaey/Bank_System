@@ -7,6 +7,7 @@
 #include<vector>
 #include "Client.h"
 #include "Employee.h"
+#include "FilesHelper.h"
 #include "Admin.h"
 using namespace std;
 
@@ -18,12 +19,26 @@ using namespace std;
 
 int main()
 {
+	Client a;
+	a.set_id(3);
+	a.set_Name("Ali");
+	a.set_password("1m4j348fs");
+	a.set_balance(4500);
+
+	Employee e("Mohamed Hamed", "jnb2794fg", 1, 8000);
+	FilesHelper::saveEmployee("Employees.txt",)
+
+	//FilesHelper::getClients();
+
+
+	/*a.Display();
+	cout << "\n------------------\n";
 	string line = "12&Mohamed Hamed&mh018743&5000";
 
 
 	Client c =  Parser::parseTo_Client(line);
 
-	c.Display();
+	c.Display();*/
 
 
 	// ------------ for test split function 

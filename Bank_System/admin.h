@@ -6,6 +6,9 @@ class Admin :
     double Salary;
 
 public:
+    Admin() :Employee() {
+
+    };
     Admin(string name, string password, int id, double salary) 
         :Employee(name, password, id,salary) {
 
