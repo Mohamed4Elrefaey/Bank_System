@@ -5,7 +5,7 @@
 
 class DataSourceInterface: public Client , public Employee
 {
-
+public:
 	virtual void addClient(Client obj) = 0;
 	virtual void addEmployee(Employee obj) = 0;
 	virtual void addAdmin(Admin obj) = 0 ;

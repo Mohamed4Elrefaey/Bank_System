@@ -3,42 +3,68 @@
 #include "FilesHelper.h"
 class FileManager
 {
-
-	void addClient(Client obj) {
+public:
+	static void addClient(Client obj) {
 		FilesHelper::saveClient(obj);
 	}
 
-	void addEmployee(Employee obj) {
+	static void addEmployee(Employee obj) {
 		FilesHelper::saveEmployee("Employees.txt","Last_Employee_Id.txt",obj);
 	}
 
-	void addAdmin(Admin obj) {
+	static void addAdmin(Admin obj) {
 		FilesHelper::saveEmployee("Admin.txt", "Last_Admin_Id.txt", obj);
 	}
 
-	void getAllClients() {
+	static void getAllClients() {
 		FilesHelper::getClients();
 	}
 
-	void getAllEmployees() {
+	static void getAllEmployees() {
 		FilesHelper::getEmployees();
 	}
 
-	void getAllAdmins() {
+	static void getAllAdmins() {
 		FilesHelper::getAdmins();
 	}
 
-	void removeAllClients() {
+	static void removeAllClients() {
 		FilesHelper::clearFile("Clients.txt", "Last_Client_Id.txt");
 	}
 
-	void removeAllEmployees() {
+	static void removeAllEmployees() {
 		FilesHelper::clearFile("Employees.txt", "Last_Employee_Id.txt");
 	}
 
-	void removeAllAdmins() {
+	static void removeAllAdmins() {
 		FilesHelper::clearFile("Admin.txt", "Last_Admin_Id.txt");
 	}
+
+	static void Last_update_for_Clients() {
+		removeAllClients();
+		for (C_itr = all_Clients.begin(); C_itr != all_Clients.end(); C_itr++)
+		{
+			addClient(*C_itr);
+		}
+	}
+
+	static void Last_update_for_Employees() {
+		removeAllEmployees();
+		for (E_itr = all_Employees.begin(); E_itr != all_Employees.end(); E_itr++)
+		{
+			addEmployee(*E_itr);
+		}
+	}
+
+	static void Last_update_for_Admins() {
+		removeAllAdmins();
+		for (A_itr = all_Admins.begin(); A_itr != all_Admins.end(); A_itr++)
+		{
+			addAdmin(*A_itr);
+		}
+	}
+
+
 
 };
 

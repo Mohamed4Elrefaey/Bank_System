@@ -1,6 +1,6 @@
 #pragma once
 #include "Person.h"
-
+#include <vector>
 class Client :
     public Person
 {
@@ -9,7 +9,7 @@ class Client :
 
 public:
     Client():Person() {
-
+        balance = 0.0;
     };
     Client(string name, string password, int id, double balance):Person(name,password,id) {
         if (Validation::validate_Balance(balance) == true)
@@ -75,4 +75,7 @@ public:
     }
 
 };
+
+static vector<Client> all_Clients;
+static vector<Client>::iterator C_itr;
 

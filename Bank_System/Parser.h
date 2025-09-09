@@ -13,22 +13,13 @@ class Parser
 	static vector<string> split(string line) {
 		vector<string> outComes{};
 		stringstream parts_of_line(line);
-
 		string part;
-		for (int i = 0; i < 4 ; i++)
-		{
-			if (i == 3)
-			{
-				getline(parts_of_line, part);
-				outComes.push_back(part);
-				break;
-			}
-			getline(parts_of_line, part, '&');
+
+		while (getline(parts_of_line, part, '&')) {
 			outComes.push_back(part);
 		}
 		return outComes;
 	};
-
 public:
 	static Client parseTo_Client(string line) {
 		vector<string> Parts = split(line);
@@ -58,7 +49,5 @@ public:
 		return Admin(name, password, id, salary);
 
 	};
-
-
 };
 
