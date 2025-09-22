@@ -53,7 +53,7 @@ public:
 		return nullptr;
 	}
 
-	static bool Client_Options(Client* client) {
+	static void Client_Options(Client* client) {
 		bool flag = true;
 		while (flag) {
 			PrintClientMenu();
@@ -107,14 +107,12 @@ public:
 				Update_Password(client);
 				break;
 			case 7:
-				cout << "Closing program. Thank you!";
 				flag = false;
 				break;
 			default:
 				cout << "Invalid choice. Please enter 1–7.\n";
 			}
 		}
-		return false;
 	}
 };
 

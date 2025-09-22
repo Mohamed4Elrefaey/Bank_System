@@ -1,6 +1,7 @@
 #pragma once
 #include"Employee.h"
 #include "Client.h"
+#include "ClientManager.h"
 class EmployeeManager
 {
 public:
@@ -10,9 +11,9 @@ public:
 		cout << " 2  ---> search For Client\n";
 		cout << " 3  ---> Edit Client \n";
 		cout << " 4  ---> Display All Clients \n";
-		//cout << " 5  ---> Back To Main Screen \n";
+		cout << " 5  ---> Update Password \n";
 		cout << " 6  ---> Display Info \n";
-		cout << " 7  ---> Close Program \n";
+		cout << " 7  ---> Logout \n";
 	}
 
 	static void newClient(Employee* employee) {
@@ -115,7 +116,7 @@ public:
 	}
 
 
-	static bool employeeOptions(Employee* employee) {
+	static void employeeOptions(Employee* employee) {
 		bool flag = true;
 
 		while (flag) {
@@ -138,18 +139,19 @@ public:
 			case 4:
 				listAllClients(employee);
 				break;
+			case 5:
+				ClientManager::Update_Password(employee);
+				break;
 			case 6:
 				employee->Display();
 				break;
 			case 7:
-				cout << "Closing program. Thank you!";
 				flag = false;
 				break;
 			default:
 				cout << "Invalid choice. Please enter 1–7.\n";
 			}
 		}
-		return false;
 	}
 
 };
