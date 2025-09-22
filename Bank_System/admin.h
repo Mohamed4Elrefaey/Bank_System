@@ -4,7 +4,6 @@ class Admin :
     public Employee
 {
     double Salary ;
-
 public:
     Admin() :Employee() {
         Salary = 0.0;
@@ -12,7 +11,6 @@ public:
 
     Admin(string name, string password, int id, double salary) 
         :Employee(name, password, id,salary) {
-
     }
 
     void add_New_Employee(Employee& e) {
@@ -45,9 +43,7 @@ public:
             search->set_salary(salary);
             search->set_password(password);
         }
-
     }
-
 
 };
 

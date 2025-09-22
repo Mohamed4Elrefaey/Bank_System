@@ -7,12 +7,13 @@ using namespace std;
 
 class Person
 {
-	int id;
+	int id ;
 	string name;
 	string password;
 
 public:
-	Person() {};
+	Person() {
+	};
 	Person(string name, string password, int id ):id(id) {
 		set_id(id);
 		if (Validation::validate_Name(name))
