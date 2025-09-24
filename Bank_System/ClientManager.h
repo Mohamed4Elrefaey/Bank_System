@@ -19,15 +19,14 @@ class ClientManager
 
 public:
 	static void PrintClientMenu() {
-		cout << "Choose Number Of Operation\n\n--------------------------\n\n";
-		cout << "	 1  ---> Deposit \n";
-		cout << "	 2  ---> Withdraw\n";
-		cout << "	 3  ---> Transfer To \n";
-		cout << "	 4  ---> Check Balance \n";
-		cout << "	 5  ---> Display Info \n";
-		cout << "	 6  ---> Update Password \n";
-		cout << "	 7  ---> Close program\n";
-		//cout << "	 8  ---> Back To Login screen\n";
+		cout << "\n Choose Number Of Operation\n\n----------------------------\n\n";
+		cout << " 1  ---> Deposit \n";
+		cout << " 2  ---> Withdraw\n";
+		cout << " 3  ---> Transfer To \n";
+		cout << " 4  ---> Check Balance \n";
+		cout << " 5  ---> Display Info \n";
+		cout << " 6  ---> Update Password \n";
+		cout << " 7  ---> Logout\n";
 	}
 
 	static void Update_Password(Person* person) {
@@ -68,6 +67,8 @@ public:
 				cout << "Enter deposit amount: ";
 				cin >> amount;
 				client->deposit(amount);
+				FileManager::Last_update_for_Clients();
+				cout << "\nThe amount has been deposited successfully.\n";
 				break;
 			}
 			case 2:{
@@ -75,6 +76,8 @@ public:
 				cout << "Enter the amount of money: ";
 				cin >> amount;
 				client->withdraw(amount);
+				FileManager::Last_update_for_Clients();
+				cout << "\nThe amount has been withdrawn successfully\n";
 				break;
 			}
 			case 3:
@@ -89,6 +92,8 @@ public:
 					if (c != nullptr)
 					{
 						client->transferTo(money, *c);
+						FileManager::Last_update_for_Clients();
+						cout << "\nThe amount has been transferred successfully\n";
 						break;
 					}
 					else {
@@ -99,13 +104,16 @@ public:
 				break;
 			case 4:
 				client->checkBalance();
+				cout << endl;
 				break;
 			case 5:
 				client->Display();
 				break;
-			case 6:
+			case 6: {
 				Update_Password(client);
+				FileManager::Last_update_for_Clients();
 				break;
+			}
 			case 7:
 				flag = false;
 				break;

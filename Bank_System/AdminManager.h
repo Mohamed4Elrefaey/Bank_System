@@ -5,12 +5,14 @@
 #include "admin.h"
 #include "EmployeeManager.h"
 #include "ClientManager.h"
+#include "FileManager.h"
+#include <windows.h>
 using namespace std;
 class AdminManager
 {
 
 	static void printEmployeeMenu() {
-		cout << "Choose Number of operation: \n";
+		cout << "\nChoose Number of operation: \n";
 		cout << " 1  ---> Add New Employee \n";
 		cout << " 2  ---> search For Employee\n";
 		cout << " 3  ---> Edit Employee \n";
@@ -44,7 +46,7 @@ class AdminManager
 				cout << "Invalid password, It must be at least 8 chars..!\n";
 				cin >> password;
 			}
-			cout << "New Employee Balance: ";
+			cout << "New Employee Salary: ";
 			cin >> salary;
 			while (!Validation::validate_Salary(salary)) {
 				cout << "Invalid salary , It must be at least 5000..!\n";
@@ -52,7 +54,9 @@ class AdminManager
 			}
 			Employee e(name, password, id, salary);
 			admin->add_New_Employee(e);
-			cout << "New Employee Added ";
+			FileManager::addEmployee(e);
+			system("cls");
+			cout << "\n\nNew Employee Added Successfully\n\n";
 	}
 
 	static void searchForEmployee(Admin* admin) {
@@ -62,11 +66,13 @@ class AdminManager
 		Employee* is_found = admin->search_Employee(id);
 		if (is_found != nullptr)
 		{
-			cout << "This Employee Is Already Exist ";
+			Sleep(1000);
+			system("cls");
+			cout << "This Employee Is Already Exist \n";
 		}
 		else
 		{
-			cout << "This Employee Is Not Exist: ";
+			cout << "This Employee Is Not Exist:\n ";
 		}
 	}
 
@@ -103,6 +109,7 @@ class AdminManager
 		if (admin->search_Employee(id) != nullptr)
 		{
 			admin->edit_Employee(id, name, password, salary);
+			FileManager::Last_update_for_Employees();
 			cout << "You Edit Employee Info Successfully..!";
 		}
 		else
@@ -161,6 +168,7 @@ public:
 			break;
 		case 10:
 			ClientManager::Update_Password(admin);
+			FileManager::Last_update_for_Admins();
 			break;
 		case 11:
 			flag = false;

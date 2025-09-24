@@ -40,7 +40,7 @@ public:
 		FilesHelper::clearFile("Admin.txt", "Last_Admin_Id.txt");
 	}
 
-	static void Last_update_for_Clients() {  // incase i update spicefic client 
+	static void Last_update_for_Clients() {  // incase i update specific client 
 		removeAllClients();
 		for (C_itr = all_Clients.begin(); C_itr != all_Clients.end(); C_itr++)
 		{

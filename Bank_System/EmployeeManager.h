@@ -2,11 +2,12 @@
 #include"Employee.h"
 #include "Client.h"
 #include "ClientManager.h"
+#include "FileManager.h"
 class EmployeeManager
 {
 public:
 	static void printEmployeeMenu() {
-		cout << "   Choose Number of Operation: \n";
+		cout << "\n   Choose Number of Operation:\n\n --------------------------- \n\n";
 		cout << " 1  ---> Add New Client \n";
 		cout << " 2  ---> search For Client\n";
 		cout << " 3  ---> Edit Client \n";
@@ -43,7 +44,8 @@ public:
 			cin >> balance;
 		}
 		Client c(name, password, id, balance);
-		employee->add_New_Client(c);
+		employee->add_New_Client(c);  // add new client to client vector 
+		FileManager::addClient(c);    // add new client to Client File 
 		cout << "New Client Added ";
 	}
 
@@ -96,7 +98,8 @@ public:
 		if (employee->search_Client(id) != nullptr)
 		{
 			employee->edit_Client(id, name, password, balance);
-			cout << "You Edit Client Info Successfully..!";
+			FileManager::Last_update_for_Clients();
+			cout << "\n\nYou Edit Client Info Successfully..!\n\n";
 		}
 		else
 		{
@@ -135,12 +138,14 @@ public:
 				break;
 			case 3:
 				editClientInfo(employee);
+				FileManager::Last_update_for_Employees();
 				break;
 			case 4:
 				listAllClients(employee);
 				break;
 			case 5:
 				ClientManager::Update_Password(employee);
+				FileManager::Last_update_for_Employees();
 				break;
 			case 6:
 				employee->Display();

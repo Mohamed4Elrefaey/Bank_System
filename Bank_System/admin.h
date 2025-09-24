@@ -18,7 +18,7 @@ public:
     }
 
     Employee* search_Employee(int id) {
-        for (E_itr = all_Employees.begin(); E_itr != all_Employees.end(); C_itr++)
+        for (E_itr = all_Employees.begin(); E_itr != all_Employees.end(); E_itr++)
         {
             if (E_itr->get_ID() == id) {
                 return &(*E_itr);
@@ -28,7 +28,7 @@ public:
     }
 
     void list_Employees() {
-        for (E_itr = all_Employees.begin(); E_itr != all_Employees.end(); C_itr++)
+        for (E_itr = all_Employees.begin(); E_itr != all_Employees.end(); E_itr++)
         {
             E_itr->Display();
             cout << "\n --------------------- \n";

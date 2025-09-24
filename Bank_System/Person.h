@@ -62,7 +62,7 @@ public:
 		return name;
 	}
 	string get_password() {
-		string pass;
+	/*	string pass;
 		
 		for (int i = 0; i < password.size(); i++)
 		{
@@ -73,9 +73,9 @@ public:
 			else {
 				pass += '*';
 			}
-		}
+		}*/
 
-		return pass;
+		return password;
 	}
 	virtual void Display() {
 		cout << "Name: " << get_name() << endl;
