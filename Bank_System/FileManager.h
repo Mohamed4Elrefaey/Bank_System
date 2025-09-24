@@ -40,12 +40,18 @@ public:
 		FilesHelper::clearFile("Admin.txt", "Last_Admin_Id.txt");
 	}
 
-	static void Last_update_for_Clients() {
+	static void Last_update_for_Clients() {  // incase i update specific client 
 		removeAllClients();
 		for (C_itr = all_Clients.begin(); C_itr != all_Clients.end(); C_itr++)
 		{
 			addClient(*C_itr);
 		}
+	}
+
+	static void get_All_Data() {
+		getAllClients();
+		getAllEmployees();
+		getAllAdmins();
 	}
 
 	static void Last_update_for_Employees() {

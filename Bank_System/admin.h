@@ -4,7 +4,6 @@ class Admin :
     public Employee
 {
     double Salary ;
-
 public:
     Admin() :Employee() {
         Salary = 0.0;
@@ -12,7 +11,6 @@ public:
 
     Admin(string name, string password, int id, double salary) 
         :Employee(name, password, id,salary) {
-
     }
 
     void add_New_Employee(Employee& e) {
@@ -20,7 +18,7 @@ public:
     }
 
     Employee* search_Employee(int id) {
-        for (E_itr = all_Employees.begin(); E_itr != all_Employees.end(); C_itr++)
+        for (E_itr = all_Employees.begin(); E_itr != all_Employees.end(); E_itr++)
         {
             if (E_itr->get_ID() == id) {
                 return &(*E_itr);
@@ -30,7 +28,7 @@ public:
     }
 
     void list_Employees() {
-        for (E_itr = all_Employees.begin(); E_itr != all_Employees.end(); C_itr++)
+        for (E_itr = all_Employees.begin(); E_itr != all_Employees.end(); E_itr++)
         {
             E_itr->Display();
             cout << "\n --------------------- \n";
@@ -45,9 +43,7 @@ public:
             search->set_salary(salary);
             search->set_password(password);
         }
-
     }
-
 
 };
 

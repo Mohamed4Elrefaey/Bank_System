@@ -7,12 +7,13 @@ using namespace std;
 
 class Person
 {
-	int id;
+	int id ;
 	string name;
 	string password;
 
 public:
-	Person() {};
+	Person() {
+	};
 	Person(string name, string password, int id ):id(id) {
 		set_id(id);
 		if (Validation::validate_Name(name))
@@ -61,7 +62,7 @@ public:
 		return name;
 	}
 	string get_password() {
-		string pass;
+	/*	string pass;
 		
 		for (int i = 0; i < password.size(); i++)
 		{
@@ -72,9 +73,9 @@ public:
 			else {
 				pass += '*';
 			}
-		}
+		}*/
 
-		return pass;
+		return password;
 	}
 	virtual void Display() {
 		cout << "Name: " << get_name() << endl;

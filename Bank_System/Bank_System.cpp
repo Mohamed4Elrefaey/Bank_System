@@ -8,6 +8,7 @@
 #include "DataSourceInterface.h"
 #include "FileManager.h"
 #include "Admin.h"
+#include "Screen.h"
 using namespace std;
 
 
@@ -15,7 +16,8 @@ using namespace std;
 int main()
 {
 
-	// Phase Two Done 
+	Screen::runApp();
+	// Phase Three Done 
 
 	return 0;
 }

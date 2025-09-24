@@ -131,13 +131,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="admin.h" />
+    <ClInclude Include="AdminManager.h" />
     <ClInclude Include="Client.h" />
+    <ClInclude Include="ClientManager.h" />
     <ClInclude Include="DataSourceInterface.h" />
     <ClInclude Include="Employee.h" />
+    <ClInclude Include="EmployeeManager.h" />
     <ClInclude Include="FileManager.h" />
     <ClInclude Include="FilesHelper.h" />
     <ClInclude Include="Parser.h" />
     <ClInclude Include="Person.h" />
+    <ClInclude Include="Screen.h" />
     <ClInclude Include="Validation.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

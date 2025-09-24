@@ -1,5 +1,6 @@
 #pragma once
 #include "Person.h"
+#include <vector>
 using namespace std;
 class Employee :
     public Person
@@ -53,7 +54,7 @@ public:
         for (C_itr = all_Clients.begin(); C_itr != all_Clients.end(); C_itr++)
         {
             C_itr->Display();
-            cout << "\n --------------------- \n";
+            cout << "\n\n --------------------- \n\n";
         }
     }
 

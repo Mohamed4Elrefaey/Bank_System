@@ -11,7 +11,7 @@ using namespace std;
 class Parser
 {
 	static vector<string> split(string line) {
-		vector<string> outComes{};
+		vector<string> outComes{};   // in the end   { "mohamed"  , "pass" ,"id" , "12300"} 
 		stringstream parts_of_line(line);
 		string part;
 
